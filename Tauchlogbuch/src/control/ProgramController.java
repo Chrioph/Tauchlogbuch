@@ -1,3 +1,7 @@
+package control;
+
+import model.Program;
+
 public class ProgramController {
 
 	private ProgramController programController;

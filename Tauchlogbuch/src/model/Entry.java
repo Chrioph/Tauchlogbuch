@@ -1,3 +1,5 @@
+package model;
+
 public class Entry {
 
 	private int entryID;
@@ -12,6 +14,8 @@ public class Entry {
 
 	private float maxDepth;
 
+	private int temperature;
+
 	private String[] tauchpartner;
 
 	private Photo[] photo;
@@ -19,13 +23,17 @@ public class Entry {
 
 	//Getter und Setter
 
-	public void setTauchpartner(int tauchpartnerNr, String tauchpartner){
-		tauchpartner[tauchpartnerNr] = tauchpartner;
+	public void setTauchpartner(int tauchpartnerNr, String tp){
+		tauchpartner[tauchpartnerNr] = tp;
 	}
 
 	public String getTauchpartner(int tauchpartnerNr){
 		return tauchpartner[tauchpartnerNr];
 	}
+
+	public int getTemperature() { return temperature; }
+
+	public void setTemperature(int temperature) { this.temperature = temperature; }
 
 	public int getEntryID() {
 		return entryID;
