@@ -17,7 +17,7 @@ public class EntryController {
 		this.programController = programController;
 	}
 
-	public ArrayList<Entry> searchEntryByNumber(int number){
+	public Entry searchEntryByNumber(int number){
 		return null;
 	}
 
@@ -34,22 +34,31 @@ public class EntryController {
 	}
 
 
+
+
 	//Es muss sichergestellt werden(in der view), dass, wenn wenger als 4 Suchkriterien angegeben werden, entryLists
 	//mit allen Eintraegen uebergeben werden.
-	public ArrayList<Entry> mergeSearchCriteria(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2,
-												ArrayList<Entry> entryList3, ArrayList<Entry> entryList4){
-		ArrayList<Entry> resultList = intersect(entryList1,entryList2);
-		resultList = intersect(resultList,entryList3);
-		resultList = intersect(resultList,entryList4);
+	public ArrayList<Entry> mergeSearchCriteria(String day, String location, String buddy){
+		ArrayList<Entry> resultList = intersect(searchEntryByDay(day), searchEntryByLocation(location));
+		resultList = intersect(resultList, searchEntryByBuddy(buddy));
 
 		return resultList;
 	}
 
 
-	//TODO Schnittfunktion implementieren
-	private ArrayList<Entry> intersect(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2) {
 
-	    return null;
+	private ArrayList<Entry> intersect(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2) {
+        ArrayList<Entry> resultList= new ArrayList<Entry>();
+        for (int i = 0; i < entryList1.size(); i++){
+            for(int j = 0; j < entryList2.size(); j++){
+                if (entryList1.get(i) == entryList2.get(j)){
+                    resultList.add(entryList1.get(i));
+                }
+            }
+        }
+
+
+	    return resultList;
 	}
 
 
