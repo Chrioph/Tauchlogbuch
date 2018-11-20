@@ -48,6 +48,8 @@ public class EntryController {
 
 	//TODO Schnittfunktion implementieren
 	private ArrayList<Entry> intersect(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2) {
+
+	    return null;
 	}
 
 
