@@ -3,6 +3,8 @@ package control;
 import model.Entry;
 import view.EntryAUI;
 
+import java.util.ArrayList;
+
 public class EntryController {
 
 	private EntryAUI entryAUI;
@@ -10,9 +12,42 @@ public class EntryController {
 	private ProgramController programController;
 
 
-
+	//TODO Search-Funktionen implementieren
 	public EntryController(ProgramController programController){
 		this.programController = programController;
+	}
+
+	public ArrayList<Entry> searchEntryByNumber(int number){
+		return null;
+	}
+
+	public ArrayList<Entry> searchEntryByDay(String day){
+		return null;
+	}
+
+	public ArrayList<Entry> searchEntryByLocation(String location){
+		return null;
+	}
+
+	public ArrayList<Entry> searchEntryByBuddy(String buddy){
+		return null;
+	}
+
+
+	//Es muss sichergestellt werden(in der view), dass, wenn wenger als 4 Suchkriterien angegeben werden, entryLists
+	//mit allen Eintraegen uebergeben werden.
+	public ArrayList<Entry> mergeSearchCriteria(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2,
+												ArrayList<Entry> entryList3, ArrayList<Entry> entryList4){
+		ArrayList<Entry> resultList = intersect(entryList1,entryList2);
+		resultList = intersect(resultList,entryList3);
+		resultList = intersect(resultList,entryList4);
+
+		return resultList;
+	}
+
+
+	//TODO Schnittfunktion implementieren
+	private ArrayList<Entry> intersect(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2) {
 	}
 
 
@@ -22,8 +57,9 @@ public class EntryController {
 	}
 
 
+
 	/*
-	Es gitb alle veränderbaren Attribute der Entries jeweils als Attribute , demenstsprechend wird
+	Es gitb alle veraenderbaren Attribute der Entries jeweils als Attribute , demenstsprechend wird
 	dann die jeweilige Methode aufgerufen, welche den Attribut in Entry dann aendert, die entryID
 	wird benoetigt, damit man weiss, wo sich der Eintrag im Entry-Array im Programm befindet.
 	 */
