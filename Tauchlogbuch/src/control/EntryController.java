@@ -57,7 +57,7 @@ public class EntryController {
 	}
 
 
-	//Test Git for IntelliJ
+
 
 
 	//Es muss sichergestellt werden(in der view), dass, wenn wenger als 4 Suchkriterien angegeben werden, entryLists
