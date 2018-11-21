@@ -16,19 +16,19 @@ public class Entry {
 
 	private int temperature;
 
-	private String[] tauchpartner;
+	private String[] buddies;
 
 	private Photo[] photo;
 
 
 	//Getter und Setter
 
-	public void setTauchpartner(int tauchpartnerNr, String tp){
-		tauchpartner[tauchpartnerNr] = tp;
+	public void setBuddy(int buddyNr, String tp){
+		buddies[buddyNr] = tp;
 	}
 
-	public String getTauchpartner(int tauchpartnerNr){
-		return tauchpartner[tauchpartnerNr];
+	public String getBuddy(int buddyNr){
+		return buddies[buddyNr];
 	}
 
 	public int getTemperature() { return temperature; }
@@ -83,12 +83,12 @@ public class Entry {
 		this.maxDepth = maxDepth;
 	}
 
-	public String[] getTauchpartner() {
-		return tauchpartner;
+	public String[] getBuddies() {
+		return buddies;
 	}
 
-	public void setTauchpartner(String[] tauchpartner) {
-		this.tauchpartner = tauchpartner;
+	public void setBuddies(String[] buddies) {
+		this.buddies = buddies;
 	}
 
 	public Photo[] getPhoto() {

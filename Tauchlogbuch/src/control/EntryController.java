@@ -11,26 +11,49 @@ public class EntryController {
 
 	private ProgramController programController;
 
-
-	//TODO Search-Funktionen implementieren
 	public EntryController(ProgramController programController){
 		this.programController = programController;
 	}
 
 	public Entry searchEntryByNumber(int number){
-		return null;
+		return programController.getProgram().getEntry(number);
 	}
 
-	public ArrayList<Entry> searchEntryByDay(String day){
-		return null;
-	}
+	public ArrayList<Entry> searchEntryByDate(String date){
+		ArrayList<Entry> entryList = programController.getProgram().getEntries();
+		ArrayList<Entry> results = new ArrayList<Entry>();
+		for(int i = 0; i< entryList.size(); i++){
+			if(entryList.get(i).getDate()==date){
+				results.add(entryList.get(i));
+			}
+		}
+
+		return results;
+		}
 
 	public ArrayList<Entry> searchEntryByLocation(String location){
-		return null;
+		ArrayList<Entry> entryList = programController.getProgram().getEntries();
+		ArrayList<Entry> results = new ArrayList<Entry>();
+		for(int i = 0; i< entryList.size(); i++){
+			if(entryList.get(i).getLocation()==location){
+				results.add(entryList.get(i));
+			}
+		}
+
+		return results;
 	}
 
 	public ArrayList<Entry> searchEntryByBuddy(String buddy){
-		return null;
+		ArrayList<Entry> entryList = programController.getProgram().getEntries();
+		ArrayList<Entry> results = new ArrayList<Entry>();
+		for(int i = 0; i< entryList.size(); i++){
+			for(int j = 0; j < programController.getProgram().getEntry(i).getBuddies().length; j++){
+				if(programController.getProgram().getEntry(i).getBuddies()[j] == buddy){
+					results.add(entryList.get(i));
+				}
+			}
+		}
+		return results;
 	}
 
 
@@ -39,7 +62,7 @@ public class EntryController {
 	//Es muss sichergestellt werden(in der view), dass, wenn wenger als 4 Suchkriterien angegeben werden, entryLists
 	//mit allen Eintraegen uebergeben werden.
 	public ArrayList<Entry> mergeSearchCriteria(String day, String location, String buddy){
-		ArrayList<Entry> resultList = intersect(searchEntryByDay(day), searchEntryByLocation(location));
+		ArrayList<Entry> resultList = intersect(searchEntryByDate(day), searchEntryByLocation(location));
 		resultList = intersect(resultList, searchEntryByBuddy(buddy));
 
 		return resultList;
@@ -91,8 +114,8 @@ public class EntryController {
 	public void editEntryMaxDepth(int entryID, float maxDepth) {
 		programController.getProgram().getEntry(entryID).setMaxDepth(maxDepth);
 	}
-	public void editEntryTauchpartner(int entryID, String tauchpartner, int tauchpartnerNr) {
-		programController.getProgram().getEntry(entryID).setTauchpartner(tauchpartnerNr, tauchpartner);
+	public void editEntryTauchpartner(int entryID, int buddyNr, String buddy) {
+		programController.getProgram().getEntry(entryID).setBuddy(buddyNr, buddy);
 	}
 
 
