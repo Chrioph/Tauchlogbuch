@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1193.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EntryListController">
    <children>
-      <TableView prefHeight="562.0" prefWidth="336.0">
+      <TableView fx:id="table" prefHeight="1107.0" prefWidth="674.0">
          <columns>
-            <TableColumn prefWidth="52.000123381614685" text="NR" />
-            <TableColumn prefWidth="198.66662979125977" text="Ort" />
-            <TableColumn prefWidth="86.00010681152344" text="Datum" />
+            <TableColumn fx:id="number" prefWidth="99.0" text="NR" />
+            <TableColumn fx:id="place" prefWidth="316.0" text="Ort" />
+            <TableColumn fx:id="date" minWidth="0.0" prefWidth="121.0" text="Datum" />
+            <TableColumn fx:id="time" prefWidth="137.0" text="Zeit" />
          </columns>
       </TableView>
-      <Button layoutY="562.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="338.0" text="Anzeigen" />
+      <Button layoutX="-1.0" layoutY="1109.0" mnemonicParsing="false" onAction="#back" prefHeight="82.0" prefWidth="338.0" text="Zurück" />
+      <Button layoutX="336.0" layoutY="1109.0" mnemonicParsing="false" onAction="#show" prefHeight="82.0" prefWidth="338.0" text="Anzeigen" />
    </children>
 </AnchorPane>

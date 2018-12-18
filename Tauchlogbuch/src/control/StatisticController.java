@@ -95,7 +95,7 @@ public class StatisticController {
 	private float calculateAvgPartners(ArrayList<Entry> entryList) {
 		int partnerSum=0;
 		for(int i = 0; i<entryList.size(); i++){
-			partnerSum += entryList.get(i).getTauchpartner().length;
+			partnerSum += entryList.get(i).getBuddies().length;
 		}
 		return partnerSum/entryList.size();
 

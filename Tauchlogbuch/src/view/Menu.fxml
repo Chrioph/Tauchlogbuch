@@ -6,11 +6,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MenuController">
    <children>
-      <Button layoutX="160.0" layoutY="224.0" mnemonicParsing="false" onAction="#OpenNewEntry" prefHeight="75.0" prefWidth="180.0" text="Neuer Eintrag" />
-      <Button layoutX="270.0" layoutY="75.0" mnemonicParsing="false" onAction="#openAllEntries" prefHeight="75.0" prefWidth="180.0" text="Alle Einträge" />
-      <Button layoutX="50.0" layoutY="75.0" mnemonicParsing="false" onAction="#openSearchEntry" prefHeight="75.0" prefWidth="180.0" text="Suche Eintrag" />
-      <Button layoutX="160.0" layoutY="351.0" mnemonicParsing="false" onAction="#openStatistics" prefHeight="75.0" prefWidth="180.0" text="Statistiken" />
+      <Button layoutX="179.0" layoutY="248.0" mnemonicParsing="false" onAction="#OpenNewEntry" prefHeight="75.0" prefWidth="180.0" text="Neuer Eintrag" />
+      <Button layoutX="186.0" layoutY="550.0" mnemonicParsing="false" onAction="#openAllEntries" prefHeight="75.0" prefWidth="180.0" text="Alle Einträge" />
+      <Button layoutX="179.0" layoutY="96.0" mnemonicParsing="false" onAction="#openSearchEntry" prefHeight="75.0" prefWidth="180.0" text="Suche Eintrag" />
+      <Button layoutX="179.0" layoutY="399.0" mnemonicParsing="false" onAction="#openStatistics" prefHeight="75.0" prefWidth="180.0" text="Statistiken" />
    </children>
 </AnchorPane>

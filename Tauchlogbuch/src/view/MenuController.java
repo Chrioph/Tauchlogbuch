@@ -22,14 +22,15 @@ public class MenuController {
 
     @FXML
     void OpenNewEntry(ActionEvent event) {
-    try {
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/NewEntry.fxml"));
             Parent root = fxmlLoader.load();
 
 
 
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Menü");
+            primaryStage = new Stage();
+            primaryStage.setTitle("Neuer Eintrag");
             primaryStage.setScene(scene);
             primaryStage.show();
 
@@ -40,17 +41,59 @@ public class MenuController {
 
     @FXML
     void openAllEntries(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/EntryList.fxml"));
+            Parent root = fxmlLoader.load();
 
+
+
+            Scene scene = new Scene(root);
+            primaryStage = new Stage();
+            primaryStage.setTitle("Alle Einträge");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void openSearchEntry(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/SearchEntry.fxml"));
+            Parent root = fxmlLoader.load();
 
+
+
+            Scene scene = new Scene(root);
+            primaryStage = new Stage();
+            primaryStage.setTitle("Suche Einträge");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void openStatistics(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Statistic.fxml"));
+            Parent root = fxmlLoader.load();
 
+
+
+            Scene scene = new Scene(root);
+            primaryStage = new Stage();
+            primaryStage.setTitle("Statistiken");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

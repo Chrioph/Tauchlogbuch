@@ -18,12 +18,12 @@
       <Text layoutX="254.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ort" />
       <Text layoutX="247.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dauer" />
       <Text layoutX="232.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatur" />
-      <TextArea layoutX="343.0" layoutY="50.0" prefHeight="549.0" prefWidth="309.0" />
+      <TextArea fx:id="comment" layoutX="343.0" layoutY="50.0" prefHeight="549.0" prefWidth="309.0" />
       <Text layoutX="466.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kommentar" />
       <Label layoutX="227.0" layoutY="429.0" text="Tauchpartner" />
       <Label layoutX="227.0" layoutY="504.0" text="Tauchpartner" />
       <Label layoutX="227.0" layoutY="579.0" text="Tauchpartner" />
-      <Button layoutX="269.0" layoutY="625.0" mnemonicParsing="false" onAction="#done" prefHeight="41.0" prefWidth="138.0" text="Fertig" />
+      <Button layoutX="54.0" layoutY="635.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="138.0" text="Zurück" />
       <TextField fx:id="temperature" layoutX="14.0" layoutY="341.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField layoutX="14.0" layoutY="573.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="buddy1" layoutX="14.0" layoutY="423.0" prefHeight="39.0" prefWidth="203.0" />
@@ -32,5 +32,6 @@
       <TextField fx:id="place" layoutX="14.0" layoutY="191.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="time" layoutX="14.0" layoutY="116.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="date" layoutX="14.0" layoutY="41.0" prefHeight="39.0" prefWidth="203.0" />
+      <Button layoutX="439.0" layoutY="635.0" mnemonicParsing="false" onAction="#done" prefHeight="41.0" prefWidth="138.0" text="Fertig" />
    </children>
 </AnchorPane>
