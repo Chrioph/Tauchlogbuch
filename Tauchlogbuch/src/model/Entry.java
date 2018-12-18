@@ -18,8 +18,19 @@ public class Entry {
 
 	private String[] buddies;
 
-	private Photo[] photo;
+	private String comment;
 
+	public Entry(int entryID, String date, String time, String location, int duration, float maxDepth, int temperature, String[] buddies, String comment){
+		this.entryID=entryID;
+		this.date=date;
+		this.time=time;
+		this.location=location;
+		this.duration=duration;
+		this.maxDepth=maxDepth;
+		this.temperature=temperature;
+		this.buddies=buddies;
+		this.comment=comment;
+	}
 
 	//Getter und Setter
 
@@ -91,11 +102,4 @@ public class Entry {
 		this.buddies = buddies;
 	}
 
-	public Photo[] getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(Photo[] photo) {
-		this.photo = photo;
-	}
 }

@@ -6,9 +6,12 @@ public class Program {
 
 	private ArrayList<Entry> entries;
 
-	private Statistic[] entryStatistic;
+	private ArrayList<Statistic> entryStatistic;
 
-
+	public Program(){
+		entries = new ArrayList<Entry>();
+		entryStatistic = new ArrayList<Statistic>();
+	}
 	//Getter and Setter
 
 	public Entry getEntry(int entryID){

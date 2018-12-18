@@ -4,26 +4,20 @@ import model.Program;
 
 public class ProgramController {
 
-	private ProgramController programController;
-
+	private EntryController entryController;
+	private StatisticController statisticController;
 	private Program program;
 
-	private StatisticController statisticController;
 
-	private EntryController entryController;
-
+	public ProgramController() {
+		program = new Program();
+		entryController=new EntryController(this);
+		statisticController = new StatisticController(this);
+	}
 
 
 	//Getter and Setter
 
-
-	public ProgramController getProgramController() {
-		return programController;
-	}
-
-	public void setProgramController(ProgramController programController) {
-		this.programController = programController;
-	}
 
 	public Program getProgram() {
 		return program;
@@ -33,19 +27,19 @@ public class ProgramController {
 		this.program = program;
 	}
 
-	public StatisticController getStatisticController() {
-		return statisticController;
-	}
-
-	public void setStatisticController(StatisticController statisticController) {
-		this.statisticController = statisticController;
-	}
-
 	public EntryController getEntryController() {
 		return entryController;
 	}
 
 	public void setEntryController(EntryController entryController) {
 		this.entryController = entryController;
+	}
+
+	public StatisticController getStatisticController() {
+		return statisticController;
+	}
+
+	public void setStatisticController(StatisticController statisticController) {
+		this.statisticController = statisticController;
 	}
 }

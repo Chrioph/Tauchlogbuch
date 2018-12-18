@@ -8,8 +8,6 @@ public class Statistic {
 
 	private  float avgPartners;
 
-	private int timesVisited;
-
 	private int maxTime;
 
 	private int coldestTemp;
@@ -20,7 +18,13 @@ public class Statistic {
 
 
 	public Statistic(){
-
+		avgTime=0;
+		maxDepth=0;
+		avgPartners=0;
+		maxTime=0;
+		coldestTemp=0;
+		warmestTemp=0;
+		timeSum=0;
 	}
 
 	//Getter and Setter
@@ -58,13 +62,6 @@ public class Statistic {
 		this.avgPartners = avgPartners;
 	}
 
-	public int getTimesVisited() {
-		return timesVisited;
-	}
-
-	public void setTimesVisited(int timesVisited) {
-		this.timesVisited = timesVisited;
-	}
 
 	public int getMaxTime() {
 		return maxTime;

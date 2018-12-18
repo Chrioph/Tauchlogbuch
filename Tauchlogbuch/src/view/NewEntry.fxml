@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="buddy3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.NewEntryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="799.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.NewEntryController">
    <children>
 
       <Text layoutX="245.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datum" />
@@ -18,20 +18,22 @@
       <Text layoutX="254.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ort" />
       <Text layoutX="247.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dauer" />
       <Text layoutX="232.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatur" />
-      <TextArea fx:id="comment" layoutX="343.0" layoutY="50.0" prefHeight="549.0" prefWidth="309.0" />
-      <Text layoutX="466.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kommentar" />
-      <Label layoutX="227.0" layoutY="429.0" text="Tauchpartner" />
+      <TextArea fx:id="comment" layoutX="344.0" layoutY="50.0" prefHeight="635.0" prefWidth="308.0" />
+      <Text layoutX="451.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kommentar" />
+      <Label layoutX="253.0" layoutY="429.0" text="Tiefe" />
       <Label layoutX="227.0" layoutY="504.0" text="Tauchpartner" />
       <Label layoutX="227.0" layoutY="579.0" text="Tauchpartner" />
-      <Button layoutX="54.0" layoutY="635.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="138.0" text="Zurück" />
+      <Button fx:id="button" layoutX="47.0" layoutY="706.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="138.0" text="Zurück" />
       <TextField fx:id="temperature" layoutX="14.0" layoutY="341.0" prefHeight="39.0" prefWidth="203.0" />
-      <TextField layoutX="14.0" layoutY="573.0" prefHeight="39.0" prefWidth="203.0" />
-      <TextField fx:id="buddy1" layoutX="14.0" layoutY="423.0" prefHeight="39.0" prefWidth="203.0" />
-      <TextField fx:id="buddy2" layoutX="14.0" layoutY="498.0" prefHeight="39.0" prefWidth="203.0" />
+      <TextField fx:id="buddy2" layoutX="14.0" layoutY="573.0" prefHeight="39.0" prefWidth="203.0" />
+      <TextField fx:id="depth" layoutX="14.0" layoutY="423.0" prefHeight="39.0" prefWidth="203.0" />
+      <TextField fx:id="buddy1" layoutX="14.0" layoutY="498.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="duration" layoutX="14.0" layoutY="266.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="place" layoutX="14.0" layoutY="191.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="time" layoutX="14.0" layoutY="116.0" prefHeight="39.0" prefWidth="203.0" />
       <TextField fx:id="date" layoutX="14.0" layoutY="41.0" prefHeight="39.0" prefWidth="203.0" />
-      <Button layoutX="439.0" layoutY="635.0" mnemonicParsing="false" onAction="#done" prefHeight="41.0" prefWidth="138.0" text="Fertig" />
+      <Button layoutX="436.0" layoutY="706.0" mnemonicParsing="false" onAction="#done" prefHeight="41.0" prefWidth="138.0" text="Fertig" />
+      <TextField fx:id="buddy3" layoutX="14.0" layoutY="647.0" prefHeight="39.0" prefWidth="203.0" />
+      <Label layoutX="227.0" layoutY="653.0" text="Tauchpartner" />
    </children>
 </AnchorPane>

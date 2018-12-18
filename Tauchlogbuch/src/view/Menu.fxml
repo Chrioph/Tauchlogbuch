@@ -10,7 +10,7 @@
    <children>
       <Button layoutX="179.0" layoutY="248.0" mnemonicParsing="false" onAction="#OpenNewEntry" prefHeight="75.0" prefWidth="180.0" text="Neuer Eintrag" />
       <Button layoutX="186.0" layoutY="550.0" mnemonicParsing="false" onAction="#openAllEntries" prefHeight="75.0" prefWidth="180.0" text="Alle Einträge" />
-      <Button layoutX="179.0" layoutY="96.0" mnemonicParsing="false" onAction="#openSearchEntry" prefHeight="75.0" prefWidth="180.0" text="Suche Eintrag" />
+      <Button fx:id="button" layoutX="179.0" layoutY="96.0" mnemonicParsing="false" onAction="#openSearchEntry" prefHeight="75.0" prefWidth="180.0" text="Suche Eintrag" />
       <Button layoutX="179.0" layoutY="399.0" mnemonicParsing="false" onAction="#openStatistics" prefHeight="75.0" prefWidth="180.0" text="Statistiken" />
    </children>
 </AnchorPane>

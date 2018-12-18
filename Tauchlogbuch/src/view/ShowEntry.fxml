@@ -15,7 +15,7 @@
       <Label layoutX="25.0" layoutY="260.0" text="Dauer" />
       <Label layoutX="25.0" layoutY="325.0" text="Tiefe" />
       <Label layoutX="25.0" layoutY="390.0" text="Tauchpartner1" />
-      <Button layoutX="156.0" layoutY="649.0" mnemonicParsing="false" onAction="#done" prefHeight="53.0" prefWidth="97.0" text="Fertig" />
+      <Button fx:id="button" layoutX="156.0" layoutY="649.0" mnemonicParsing="false" onAction="#done" prefHeight="53.0" prefWidth="97.0" text="Fertig" />
       <Label fx:id="date" layoutX="209.0" layoutY="65.0" text="Platzhalter" />
       <Label fx:id="place" layoutX="209.0" layoutY="195.0" text="Platzhalter" />
       <Label fx:id="duration" layoutX="209.0" layoutY="262.0" text="Platzhalter" />

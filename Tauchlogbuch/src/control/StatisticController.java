@@ -16,6 +16,9 @@ public class StatisticController {
 
 	private ProgramController programController;
 
+	public StatisticController(ProgramController programController){
+		this.programController=programController;
+	}
 
 	public Statistic CalculateStatistic(String location) {
 		Statistic statistic= new Statistic();
@@ -27,7 +30,6 @@ public class StatisticController {
 		statistic.setColdestTemp(calculateColdestTemp(entryList));
 		statistic.setMaxDepth(calculateMaxDepth(entryList));
 		statistic.setMaxTime(calculateMaxTime(entryList));
-		statistic.setTimesVisited(calculateTimesVisited(entryList));
 		statistic.setWarmestTemp(calculateWarmestTemp(entryList));
 		statistic.setTimeSum(calculateTimeSum(entryList));
 

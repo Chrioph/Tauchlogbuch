@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class MenuController {
@@ -19,6 +20,8 @@ public class MenuController {
         this.programController = new ProgramController();
     }
 
+    @FXML
+    private Button button;
 
     @FXML
     void OpenNewEntry(ActionEvent event) {
@@ -26,10 +29,11 @@ public class MenuController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/NewEntry.fxml"));
             Parent root = fxmlLoader.load();
 
-
+            NewEntryController newEntryController = fxmlLoader.getController();
+            newEntryController.setProgramController(programController);
 
             Scene scene = new Scene(root);
-            primaryStage = new Stage();
+            primaryStage = (Stage) button.getScene().getWindow();
             primaryStage.setTitle("Neuer Eintrag");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -45,10 +49,13 @@ public class MenuController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/EntryList.fxml"));
             Parent root = fxmlLoader.load();
 
+            EntryListController entryListController = fxmlLoader.getController();
+            entryListController.setProgramController(programController);
+
 
 
             Scene scene = new Scene(root);
-            primaryStage = new Stage();
+            primaryStage = (Stage) button.getScene().getWindow();
             primaryStage.setTitle("Alle Einträge");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -64,10 +71,11 @@ public class MenuController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/SearchEntry.fxml"));
             Parent root = fxmlLoader.load();
 
-
+            SearchEntryController searchEntryController = fxmlLoader.getController();
+            searchEntryController.setProgramController(programController);
 
             Scene scene = new Scene(root);
-            primaryStage = new Stage();
+            primaryStage = (Stage) button.getScene().getWindow();
             primaryStage.setTitle("Suche Einträge");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -83,10 +91,11 @@ public class MenuController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Statistic.fxml"));
             Parent root = fxmlLoader.load();
 
-
+            StatisticController statisticController = fxmlLoader.getController();
+            statisticController.setProgramController(programController);
 
             Scene scene = new Scene(root);
-            primaryStage = new Stage();
+            primaryStage = (Stage) button.getScene().getWindow();
             primaryStage.setTitle("Statistiken");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -95,5 +104,10 @@ public class MenuController {
             e.printStackTrace();
         }
     }
-
+    public void setProgramController(ProgramController programController){
+        this.programController=programController;
+    }
+    public void closePrimaryStage(){
+        primaryStage.hide();
+    }
 }
