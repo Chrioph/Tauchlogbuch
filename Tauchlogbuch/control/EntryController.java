@@ -1,9 +1,9 @@
 package control;
 
+import java.util.*;
+
 import model.Entry;
 import view.EntryAUI;
-
-import java.util.ArrayList;
 
 public class EntryController {
 
