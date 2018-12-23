@@ -29,8 +29,7 @@ public class Main extends Application {
 
             Scene scene = new Scene(root);
             final Program program = programController.getProgram();
-            primaryStage.setOnCloseRequest(event -> {IOController.save(program);
-                System.out.println("Saved");});
+            primaryStage.setOnCloseRequest(event -> {IOController.save(program); });
             primaryStage.setTitle("Menu");
             primaryStage.setScene(scene);
             primaryStage.show();

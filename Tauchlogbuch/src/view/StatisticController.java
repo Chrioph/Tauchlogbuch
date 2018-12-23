@@ -37,6 +37,8 @@ public class StatisticController {
     @FXML
     private Label warmest;
 
+    @FXML
+    private Label avgBuddies;
 
     @FXML
     private Label count;
@@ -47,10 +49,7 @@ public class StatisticController {
     @FXML
     private Button button;
 
-    @FXML
-    void done(ActionEvent event) {
 
-    }
 
     @FXML
     void back(ActionEvent event) throws IOException {
@@ -72,5 +71,6 @@ public class StatisticController {
         maxDepth.setText("" + statistic.getMaxDepth());
         count.setText("" + programController.getProgram().getEntries().size());
         avgTemp.setText("" + statistic.getAvgTemp());
+        avgBuddies.setText(""+ statistic.getAvgPartners());
     }
 }

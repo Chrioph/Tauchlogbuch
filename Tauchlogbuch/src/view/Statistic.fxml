@@ -14,7 +14,6 @@
             <Label layoutX="15.0" layoutY="70.0" text="Durchschnittliche Tauchzeit:" />
             <Label layoutX="15.0" layoutY="210.0" text="Anzahl Tauchgänge:" />
             <Label layoutX="15.0" layoutY="350.0" text="Durchschnittliche Tauchpartner:" />
-            <Button fx:id="button" layoutX="424.0" layoutY="690.0" mnemonicParsing="false" onAction="#done" scaleX="1.5" scaleY="1.5" text="Okay" />
             <Label layoutX="14.0" layoutY="560.0" text="Maximale Tiefe:" />
             <Label layoutX="15.0" layoutY="280.0" text="Längster Tauchgang:" />
             <Label layoutX="15.0" layoutY="420.0" text="Kältester Tauchgang:" />
@@ -24,10 +23,12 @@
             <Label fx:id="sumTime" layoutX="387.0" layoutY="140.0" text="Label" />
             <Label fx:id="count" layoutX="387.0" layoutY="210.0" text="Label" />
             <Label fx:id="longest" layoutX="387.0" layoutY="280.0" text="Label" />
-            <Label fx:id="avgTemp" layoutX="387.0" layoutY="350.0" text="Label" />
+            <Label fx:id="avgBuddies" layoutX="387.0" layoutY="350.0" text="Label" />
             <Label fx:id="coldest" layoutX="386.0" layoutY="420.0" text="Label" />
             <Label fx:id="warmest" layoutX="387.0" layoutY="490.0" text="Label" />
             <Label fx:id="maxDepth" layoutX="386.0" layoutY="560.0" text="Label" />
-            <Button layoutX="87.0" layoutY="690.0" mnemonicParsing="false" onAction="#back" scaleX="1.5" scaleY="1.5" text="Zurück" />
+            <Button fx:id="button" layoutX="228.0" layoutY="702.0" mnemonicParsing="false" onAction="#back" scaleX="1.5" scaleY="1.5" text="Zurück" />
+      <Label fx:id="avgTemp" layoutX="387.0" layoutY="630.0" text="Label" />
+      <Label layoutX="15.0" layoutY="630.0" text="Durchschnittliche Temperatur" />
          </children>
       </AnchorPane>
