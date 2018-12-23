@@ -11,7 +11,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchEntryController">
    <children>
       <TextField fx:id="number" layoutX="189.0" layoutY="50.0" prefHeight="39.0" prefWidth="121.0" />
-      <TextField layoutX="50.0" layoutY="160.0" prefHeight="39.0" prefWidth="363.0" />
+      <TextField fx:id="day" layoutX="50.0" layoutY="160.0" prefHeight="39.0" prefWidth="363.0" />
       <TextField fx:id="place" layoutX="50.0" layoutY="270.0" prefHeight="39.0" prefWidth="363.0" />
       <TextField fx:id="buddy" layoutX="50.0" layoutY="380.0" prefHeight="39.0" prefWidth="363.0" />
       <Label layoutX="443.0" layoutY="56.0" text="Nummer" />

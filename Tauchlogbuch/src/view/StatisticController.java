@@ -1,6 +1,7 @@
 package view;
 
 import control.ProgramController;
+import control.Util;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Statistic;
 
 import java.io.IOException;
 
@@ -35,8 +37,6 @@ public class StatisticController {
     @FXML
     private Label warmest;
 
-    @FXML
-    private AnchorPane anchor;
 
     @FXML
     private Label count;
@@ -54,19 +54,23 @@ public class StatisticController {
 
     @FXML
     void back(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Menu.fxml"));
-        Parent root = fxmlLoader.load();
-
-        MenuController menuController = fxmlLoader.getController();
-        menuController.setProgramController(programController);
-
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.setScene(scene);
+        new Util().openMenu(programController, button);
     }
 
     public void setProgramController(ProgramController programController){
         this.programController=programController;
     }
 
+    public void showStatistic() {
+        Statistic statistic = programController.getStatisticController().CalculateStatistic();
+        coldest.setText("" + statistic.getColdestTemp());
+        maxDepth.setText("" + statistic.getMaxDepth());
+        sumTime.setText("" + statistic.getTimeSum());
+        longest.setText("" + statistic.getMaxTime());
+        avgTime.setText("" + statistic.getAvgTime());
+        warmest.setText("" + statistic.getWarmestTemp());
+        maxDepth.setText("" + statistic.getMaxDepth());
+        count.setText("" + programController.getProgram().getEntries().size());
+        avgTemp.setText("" + statistic.getAvgTemp());
+    }
 }

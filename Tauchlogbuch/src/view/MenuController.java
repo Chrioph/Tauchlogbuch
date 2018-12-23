@@ -2,6 +2,7 @@ package view;
 
 
 import control.ProgramController;
+import control.Util;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,15 +11,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class MenuController {
 
     ProgramController programController;
 
     Stage primaryStage;
 
-    public MenuController(){
-        this.programController = new ProgramController();
-    }
+
 
     @FXML
     private Button button;
@@ -44,25 +45,8 @@ public class MenuController {
     }
 
     @FXML
-    void openAllEntries(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/EntryList.fxml"));
-            Parent root = fxmlLoader.load();
-
-            EntryListController entryListController = fxmlLoader.getController();
-            entryListController.setProgramController(programController);
-
-
-
-            Scene scene = new Scene(root);
-            primaryStage = (Stage) button.getScene().getWindow();
-            primaryStage.setTitle("Alle Einträge");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+    void openAllEntries(ActionEvent event) throws IOException {
+        new Util().openEntryList(programController, button , programController.getProgram().getEntries());
     }
 
     @FXML
@@ -93,6 +77,8 @@ public class MenuController {
 
             StatisticController statisticController = fxmlLoader.getController();
             statisticController.setProgramController(programController);
+            statisticController.showStatistic();
+
 
             Scene scene = new Scene(root);
             primaryStage = (Stage) button.getScene().getWindow();
@@ -110,4 +96,6 @@ public class MenuController {
     public void closePrimaryStage(){
         primaryStage.hide();
     }
+
+
 }

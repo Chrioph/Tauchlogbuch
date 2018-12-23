@@ -1,6 +1,7 @@
 package view;
 
 import control.ProgramController;
+import control.Util;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +19,6 @@ import java.io.IOException;
 public class NewEntryController {
 
     private ProgramController programController;
-
-    private Stage stage;
 
     @FXML
     private TextField duration;
@@ -58,20 +57,28 @@ public class NewEntryController {
 
     @FXML
     void back(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Menu.fxml"));
-        Parent root = fxmlLoader.load();
-
-        MenuController menuController = fxmlLoader.getController();
-        menuController.setProgramController(programController);
-
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.setScene(scene);
+        new Util().openMenu(programController, button);
     }
 
     @FXML
     void done(ActionEvent event) throws IOException {
         String[] buddies ={buddy1.getText(), buddy2.getText(), buddy3.getText()};
+        if(buddy1.getText().equals("")){
+            new ErrorController().generateErrorFrame("Bitte geben Sie einen Tauchpartner an");
+            return;
+        }
+        else if(place.getText().equals("")){
+            new ErrorController().generateErrorFrame("Bitte geben Sie einen Ort ein");
+            return;
+        }
+        else if (date.getText().equals("")){
+            new ErrorController().generateErrorFrame("Bitte geben Sie ein Datum ein");
+            return;
+        }
+        else if (time.getText().equals("")){
+            new ErrorController().generateErrorFrame("Bitte geben Sie eine Zeit ein");
+            return;
+        }
         try {
             Entry entry = new Entry(programController.getProgram().getEntries().size(), date.getText(), time.getText(),
                     place.getText(), Integer.parseInt(duration.getText()), Float.parseFloat(depth.getText()),
@@ -79,7 +86,9 @@ public class NewEntryController {
             programController.getEntryController().addEntry(entry);
 
         }catch (NumberFormatException nfe){
-            System.out.println("Geben Sie ein gültiges Format an");
+            new ErrorController().generateErrorFrame("Bitte geben Sie in den Feldern Tiefe und Temperatur Kommzahlen und in dem Feld Dauer die Dauer in Minuten ein !");
+        }catch (NullPointerException npe){
+            new ErrorController().generateErrorFrame("Bitte geben Sie in allen Feldern außer Tauchpartner 2 und 3, sowie Kommentar einen Wert ein !");
         }
 
         back(null);

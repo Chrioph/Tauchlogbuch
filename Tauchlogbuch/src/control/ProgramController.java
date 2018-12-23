@@ -15,6 +15,12 @@ public class ProgramController {
 		statisticController = new StatisticController(this);
 	}
 
+	public ProgramController(Program program) {
+		this.program = program;
+		entryController=new EntryController(this);
+		statisticController = new StatisticController(this);
+	}
+
 
 	//Getter and Setter
 

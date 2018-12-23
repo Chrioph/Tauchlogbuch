@@ -1,9 +1,10 @@
 package control;
 
+import java.util.ArrayList;
+
+import control.ProgramController;
 import model.Entry;
 import view.EntryAUI;
-
-import java.util.ArrayList;
 
 public class EntryController {
 
@@ -32,7 +33,11 @@ public class EntryController {
 		}
 
 	public ArrayList<Entry> searchEntryByLocation(String location){
+
+
 		ArrayList<Entry> entryList = programController.getProgram().getEntries();
+		if (location=="Alle")
+			return entryList;
 		ArrayList<Entry> results = new ArrayList<Entry>();
 		for(int i = 0; i< entryList.size(); i++){
 			if(entryList.get(i).getLocation()==location){
@@ -71,7 +76,7 @@ public class EntryController {
 
 
 
-	private ArrayList<Entry> intersect(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2) {
+	public ArrayList<Entry> intersect(ArrayList<Entry> entryList1, ArrayList<Entry> entryList2) {
         ArrayList<Entry> resultList= new ArrayList<Entry>();
         for (int i = 0; i < entryList1.size(); i++){
             for(int j = 0; j < entryList2.size(); j++){

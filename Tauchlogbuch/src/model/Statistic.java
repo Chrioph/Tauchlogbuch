@@ -1,6 +1,8 @@
 package model;
 
-public class Statistic {
+import java.io.Serializable;
+
+public class Statistic implements Serializable {
 
 	private int avgTime;
 
@@ -15,6 +17,8 @@ public class Statistic {
 	private int warmestTemp;
 
 	private int timeSum;
+
+	private float avgTemp;
 
 
 	public Statistic(){
@@ -86,4 +90,9 @@ public class Statistic {
 	public void setWarmestTemp(int warmestTemp) {
 		this.warmestTemp = warmestTemp;
 	}
+
+    public float getAvgTemp() { return avgTemp;
+    }
+
+    public void setAvgTemp(float avgTemp){ this.avgTemp = avgTemp;}
 }

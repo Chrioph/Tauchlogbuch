@@ -8,9 +8,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1193.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EntryListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EntryListController">
    <children>
-      <TableView fx:id="table" prefHeight="1107.0" prefWidth="674.0">
+      <TableView fx:id="table" prefHeight="770.0" prefWidth="671.0">
          <columns>
             <TableColumn fx:id="number" prefWidth="99.0" text="NR" />
             <TableColumn fx:id="place" prefWidth="316.0" text="Ort" />
@@ -18,7 +18,7 @@
             <TableColumn fx:id="time" prefWidth="137.0" text="Zeit" />
          </columns>
       </TableView>
-      <Button fx:id="button" layoutX="-1.0" layoutY="1109.0" mnemonicParsing="false" onAction="#back" prefHeight="82.0" prefWidth="338.0" text="Zurück" />
-      <Button layoutX="336.0" layoutY="1109.0" mnemonicParsing="false" onAction="#show" prefHeight="82.0" prefWidth="338.0" text="Anzeigen" />
+      <Button fx:id="button" layoutY="770.0" mnemonicParsing="false" onAction="#back" prefHeight="82.0" prefWidth="338.0" text="Zurück" />
+      <Button layoutX="338.0" layoutY="770.0" mnemonicParsing="false" onAction="#show" prefHeight="82.0" prefWidth="338.0" text="Anzeigen" />
    </children>
 </AnchorPane>

@@ -20,10 +20,9 @@ public class StatisticController {
 		this.programController=programController;
 	}
 
-	public Statistic CalculateStatistic(String location) {
+	public Statistic CalculateStatistic() {
 		Statistic statistic= new Statistic();
-		ArrayList<Entry> entryList = getEntriesFrom(location);
-
+		ArrayList<Entry> entryList = programController.getProgram().getEntries();
 		//Setze alle Statistik-Werte mit ausgelagerten Hilfsmethoden
 		statistic.setAvgPartners(calculateAvgPartners(entryList));
 		statistic.setAvgTime(calculateAvgTime(entryList));
@@ -32,6 +31,7 @@ public class StatisticController {
 		statistic.setMaxTime(calculateMaxTime(entryList));
 		statistic.setWarmestTemp(calculateWarmestTemp(entryList));
 		statistic.setTimeSum(calculateTimeSum(entryList));
+		statistic.setAvgTemp(calculateAvgTemp(entryList));
 
 		return statistic;
 	}
@@ -47,6 +47,14 @@ public class StatisticController {
 		return timeSum;
 	}
 
+	private float calculateAvgTemp(ArrayList<Entry> entryList){
+		float tempSum=0;
+		for(int i = 0; i<entryList.size(); i++){
+			tempSum += entryList.get(i).getTemperature();
+		}
+		return tempSum/entryList.size();
+
+	}
 
 	private int calculateWarmestTemp(ArrayList<Entry> entryList) {
 		int warmestTemp=entryList.get(0).getTemperature();
@@ -57,9 +65,6 @@ public class StatisticController {
 		return warmestTemp;
 	}
 
-	private int calculateTimesVisited(ArrayList<Entry> entryList) {
-		return entryList.size();
-	}
 
 	private int calculateMaxTime(ArrayList<Entry> entryList) {
 		int maxTime=entryList.get(0).getDuration();

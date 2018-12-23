@@ -1,8 +1,10 @@
 package model;
 
-public class Entry {
+import java.io.Serializable;
 
-	private int entryID;
+public class Entry implements Serializable {
+
+	private int number;
 
 	private String date;
 
@@ -20,8 +22,8 @@ public class Entry {
 
 	private String comment;
 
-	public Entry(int entryID, String date, String time, String location, int duration, float maxDepth, int temperature, String[] buddies, String comment){
-		this.entryID=entryID;
+	public Entry(int number, String date, String time, String location, int duration, float maxDepth, int temperature, String[] buddies, String comment){
+		this.number=number;
 		this.date=date;
 		this.time=time;
 		this.location=location;
@@ -46,12 +48,12 @@ public class Entry {
 
 	public void setTemperature(int temperature) { this.temperature = temperature; }
 
-	public int getEntryID() {
-		return entryID;
+	public int getNumber() {
+		return number;
 	}
 
-	public void setEntryID(int entryID) {
-		this.entryID = entryID;
+	public void setEntryID(int number) {
+		this.number = number;
 	}
 
 	public String getDate() {
@@ -100,6 +102,10 @@ public class Entry {
 
 	public void setBuddies(String[] buddies) {
 		this.buddies = buddies;
+	}
+
+	public String getComment(){
+		return comment;
 	}
 
 }
